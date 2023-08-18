@@ -1,44 +1,42 @@
-<!-- </body>
-<footer>
-<p>This is my footer of the login and register form</p>
-</footer>
-</html> -->
-
 
 <div class="row">
-<p class="col-sm-12">This is my footer of the booking app</p>
+<h3 class="col-sm-12">Stay at one of our beautiful resorts</h3>
   <div class="col-sm-3">
     <div class="card">
       <div class="card-body">
-        <h5 class="card-title">Special title treatment</h5>
-        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
+        <img width="120px" src="./images/home4.jpg" alt="">
+        <h5 class="card-title">Madikwe Hills</h5>
+        <p class="card-text">Taung, NW.</p>
+        <a href=".hotelpage" class="btn btn-warning">Explore</a>
       </div>
     </div>
   </div>
   <div class="col-sm-3">
     <div class="card">
       <div class="card-body">
-        <h5 class="card-title">Special title treatment</h5>
-        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
+      <img width="120px" src="./images/home.jpg" alt="">
+        <h5 class="card-title">Cascades</h5>
+        <p class="card-text">Zeerust, NW</p>
+        <a href="#" class="btn btn-warning">Explore</a>
       </div>
     </div>
   </div>
   <div class="col-sm-3">
     <div class="card">
       <div class="card-body">
-        <h5 class="card-title">Special title treatment</h5>
-        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
+      <img width="120px" src="./images/home2.jpg" alt="">
+        <h5 class="card-title">Manor Hills</h5>
+        <p class="card-text">Mafikeng, NW</p>
+        <a href="#" class="btn btn-warning">Explore</a>
       </div>
     </div>
   </div>
   <div class="col-sm-3">
     <div class="card">
       <div class="card-body">
-        <h5 class="card-title">Special title treatment</h5>
-        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
+      <img width="120px" src="./images/home3.jpg" alt="">
+        <h5 class="card-title">Sun City Resort</h5>
+        <p class="card-text">Rustenburg, NW</p>
+        <a href="#" class="btn btn-warning">Explore</a>
       </div>
 </div>

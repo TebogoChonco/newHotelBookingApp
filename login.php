@@ -2,15 +2,7 @@
 require_once 'includes/header.php';
 
 ?>
-
-<!-- <div class="browserImage">
-<p class="welcome-text">
-        Explore North West!
-      </p>
-</div> -->
-
-<!--Code for carousel-->
-
+<div class="landingPage"></div>
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
   <ol class="carousel-indicators">
     <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -19,13 +11,13 @@ require_once 'includes/header.php';
   </ol>
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img class="d-block " src="./images/home.jpg" alt="First slide">
+      <img class="d-block " src="./images/home3.jpg" alt="First slide">
     </div>
     <div class="carousel-item">
-      <img class="d-block " src="./images/home1.jpg" alt="Second slide">
+      <img class="d-block " src="./images/home.jpg" alt="Second slide">
     </div>
     <div class="carousel-item">
-      <img class="d-block " src="./images/home2.jpg" alt="Third slide">
+      <img class="d-block " src="./images/home1.jpg" alt="Third slide">
     </div>
   </div>
   <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -38,18 +30,16 @@ require_once 'includes/header.php';
   </a>
   <div class="content">
     <h1>North West</h1>
-    <h2>Let's explore this beautiful province</h2>
+    <h3>Let's explore this beautiful province</h3>
   </div>
 </div>
+</div>
 
-
-
-
-<div>
+<div class="landingBody">
     <h1>Log in</h1>
     <p> No account? <a href="register.php">Register here!</a></p>
 
-    <div class="logInForms">
+  <div class="logInForms">
     <form action="includes/login-inc.php" method="post">
         <p class="label">User Log In</p>
         <input type="text" name="username" placeholder="Username">
@@ -64,9 +54,8 @@ require_once 'includes/header.php';
         <input type="password" name="password" placeholder="Password">
         <button type="submit" name="submit">LOGIN</button>
     </form>
-
-    </div>
-</div>
+  </div>
+   
 
 <?php
 require_once 'includes/footer.php';

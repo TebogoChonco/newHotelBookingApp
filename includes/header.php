@@ -19,8 +19,10 @@
     <nav>
         <ul>
             <li><a href="index.php">Home</a></li>
-            <li><a href="login.php">Login</a></li>
-            <li><a href="register.php">Register</a></li>
+            <li><a href="rooms.php">Rooms</a></li>
+            <li><a href="booking.php">Bookings</a></li>
+            <li><a href="gallery.php">Gallery</a></li>
+            <li><a href="aboutUs.php">About us</a></li>
         </ul>
     </nav>
 </header>
