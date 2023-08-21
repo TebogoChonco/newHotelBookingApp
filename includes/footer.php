@@ -7,7 +7,7 @@
         <img width="120px" src="./images/home4.jpg" alt="">
         <h5 class="card-title">Madikwe Hills</h5>
         <p class="card-text">Taung, NW.</p>
-        <a href=".hotelpage" class="btn btn-warning">Explore</a>
+        <a href="login.php" class="btn btn-warning">Log in to explore</a>
       </div>
     </div>
   </div>
@@ -17,7 +17,7 @@
       <img width="120px" src="./images/home.jpg" alt="">
         <h5 class="card-title">Cascades</h5>
         <p class="card-text">Zeerust, NW</p>
-        <a href="#" class="btn btn-warning">Explore</a>
+        <a href="login.php" class="btn btn-warning">Log in to explore</a>
       </div>
     </div>
   </div>
@@ -27,7 +27,7 @@
       <img width="120px" src="./images/home2.jpg" alt="">
         <h5 class="card-title">Manor Hills</h5>
         <p class="card-text">Mafikeng, NW</p>
-        <a href="#" class="btn btn-warning">Explore</a>
+        <a href="login.php" class="btn btn-warning">Log in to explore</a>
       </div>
     </div>
   </div>
@@ -37,6 +37,6 @@
       <img width="120px" src="./images/home3.jpg" alt="">
         <h5 class="card-title">Sun City Resort</h5>
         <p class="card-text">Rustenburg, NW</p>
-        <a href="#" class="btn btn-warning">Explore</a>
+        <a href="login.php" class="btn btn-warning">Log in to explore</a>
       </div>
 </div>

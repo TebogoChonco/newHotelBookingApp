@@ -1,6 +1,6 @@
 <?php
     session_start();
-    require_once 'database.php';
+    require_once 'includes/database.php';
     require_once 'register-inc.php';
     
 ?>
@@ -23,6 +23,7 @@
             <li><a href="booking.php">Bookings</a></li>
             <li><a href="gallery.php">Gallery</a></li>
             <li><a href="aboutUs.php">About us</a></li>
+            <li><a href="employee.php">Employee</a></li>
         </ul>
     </nav>
 </header>

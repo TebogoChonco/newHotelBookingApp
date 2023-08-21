@@ -40,20 +40,16 @@ require_once 'includes/header.php';
     <p> No account? <a href="register.php">Register here!</a></p>
 
   <div class="logInForms">
-    <form action="includes/login-inc.php" method="post">
+    <form action="home.php" method="post">
         <p class="label">User Log In</p>
+        <?php if (isset($_GET['error'])) { ?>
+     		<p class="error"><?php echo $_GET['error']; ?></p>
+     	<?php } ?>
         <input type="text" name="username" placeholder="Username">
         <input type="password" name="password" placeholder="Password">
         <button type="submit" name="submit">LOGIN</button>
     </form>
 
-    <form action="includes/login-inc.php" method="post">
-        <p class="label">Employee Log In</p>
-        <input type="text" name="employeeNum" placeholder="employee number">
-        <input type="text" name="username" placeholder="Username">
-        <input type="password" name="password" placeholder="Password">
-        <button type="submit" name="submit">LOGIN</button>
-    </form>
   </div>
    
 
