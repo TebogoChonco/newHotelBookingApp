@@ -38,7 +38,7 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
                     session_start();
                     $_SESSION['sessionId'] = $row['id'];
                     $_SESSION['sessionUser'] = $row['username'];
-                    header("Location: ../login.php?success=loggedin");
+                    header("Location: ../home.php?success=loggedin");
                     exit();
                 } else {
                     header("Location: ../login.php?error=wrongpass");

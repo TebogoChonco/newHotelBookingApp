@@ -30,22 +30,25 @@ require_once 'includes/header.php';
   </a>
   <div class="content">
     <h1>North West</h1>
-    <h3>Let's explore this beautiful province</h3>
+    <h7>Let's explore this beautiful province</h7>
   </div>
 </div>
 </div>
 
 
 <div class="landingBody">
-    <h1>Register</h1>
-    <p> Already have an account? <a href="login.php">Login!</a></p>
+  <h1>Register</h1>
+  <p> Already have an account? <a href="login.php">Login!</a></p>
     <div class="logInForms">
-    <form action="includes/register-inc.php" method="post">
+      <form action="includes/register-inc.php" method="post" >
+        <?php if (isset($_GET['error'])) { ?>
+     		  <p class="error"><?php echo $_GET['error']; ?></p>
+      	<?php } ?>
         <input type="text" name="username" placeholder="Username">
         <input type="password" name="password" placeholder="Password">
         <input type="password" name="confirmPassword" placeholder="Confirm password">
         <button type="submit" name="submit">REGISTER</button>
-    </form>
+      </form>
     </div>
 </div>
 

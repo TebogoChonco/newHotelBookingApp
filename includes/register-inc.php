@@ -9,13 +9,13 @@ if (isset($_POST['submit'])) {
     $confirmPass = $_POST['confirmPassword'];
 
     if (empty($username) || empty($password) || empty($confirmPass)) {
-        header("Location: ../register.php?error=emptyfields&username=".$username);
+        header("Location: register.php?error=emptyfields&username=");
         exit();
     } elseif (!preg_match("/^[a-zA-Z0-9]*/", $username)) {
-        header("Location: ../register.php?error=invalidusername&username=".$username);
+        header("Location: register.php?error=invalidusername&username=");
         exit();
     } elseif($password !== $confirmPass) {
-        header("Location: ../register.php?error=passwordsdonotmatch&username=".$username);
+        header("Location: register.php?error=passwordsdonotmatch&username=");
         exit();
     }
 
@@ -23,7 +23,7 @@ if (isset($_POST['submit'])) {
         $sql = "SELECT username FROM users WHERE username = ?";
         $stmt = mysqli_stmt_init($conn);
         if (!mysqli_stmt_prepare($stmt, $sql)) {
-            header("Location: ../register.php?error=sqlerror");
+            header("Location: register.php?error=sqlerror");
             exit();
         } else {
             mysqli_stmt_bind_param($stmt, "s", $username);
@@ -32,13 +32,13 @@ if (isset($_POST['submit'])) {
             $rowCount = mysqli_stmt_num_rows($stmt);
 
             if ($rowCount > 0) {
-                header("Location: ../register.php?error=usernametaken");
+                header("Location: register.php?error=usernametaken");
                 exit();
             } else {
                 $sql = "INSERT INTO users (username, password) VALUES (?, ?)";
                 $stmt = mysqli_stmt_init($conn);
                  if (!mysqli_stmt_prepare($stmt, $sql)) {
-                    header("Location: ../register.php?error=sqlerror");
+                    header("Location: register.php?error=sqlerror");
                     exit();
              } else {
 
@@ -50,7 +50,7 @@ if (isset($_POST['submit'])) {
 
                     mysqli_stmt_bind_param($stmt, "ss", $username, $hashedPass);
                     mysqli_stmt_execute($stmt);*/
-                        header("Location: ../register.php?succes=registered");
+                        header("Location: register.php?succes=Registered");
                         exit(); 
                 } 
             }

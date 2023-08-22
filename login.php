@@ -30,7 +30,7 @@ require_once 'includes/header.php';
   </a>
   <div class="content">
     <h1>North West</h1>
-    <h3>Let's explore this beautiful province</h3>
+    <h7>Let's explore this beautiful province</h7>
   </div>
 </div>
 </div>
@@ -40,13 +40,13 @@ require_once 'includes/header.php';
     <p> No account? <a href="register.php">Register here!</a></p>
 
   <div class="logInForms">
-    <form action="home.php" method="post">
+    <form action="home.php" method="post" >
         <p class="label">User Log In</p>
         <?php if (isset($_GET['error'])) { ?>
      		<p class="error"><?php echo $_GET['error']; ?></p>
      	<?php } ?>
-        <input type="text" name="username" placeholder="Username">
-        <input type="password" name="password" placeholder="Password">
+        <input type="text" name="username" placeholder="Username" autocomplete="off">
+        <input type="password" name="password" placeholder="Password" autocomplete="off">
         <button type="submit" name="submit">LOGIN</button>
     </form>
 
