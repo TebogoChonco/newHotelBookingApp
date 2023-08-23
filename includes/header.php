@@ -1,7 +1,11 @@
 <?php
+
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
     session_start();
     require_once 'includes/database.php';
-    require_once 'register-inc.php';
+    // require_once 'register-inc.php';
     
 ?>
 <!DOCTYPE html>

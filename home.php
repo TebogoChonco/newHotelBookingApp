@@ -2,8 +2,21 @@
 require_once 'includes/header.php';
 ?>
 
-<h2> Welcome, <?php echo $_SESSION['username'];?><h2>
-    <a class="logout" href= "logout.php">Logout</a>
+
+
+  <div id="main-wrapper">
+		
+		<h3>Welcome <?php echo $_SESSION['username']; ?></h3>
+		
+		<form action="login.php" method="post">
+		
+			<div class="inner_container">
+				<button class="logout_button" type="submit">Log Out</button>	
+			</div>
+		</form>
+	</div>
+<br>
+<br>
 
     <div class="hotelBody">
     <div class="row" id="hotelCards">
@@ -25,7 +38,7 @@ require_once 'includes/header.php';
                      <span class="fa fa-star"></span>
                      <span class="fa fa-star"></span>
                    </div>
-                  <a href="login.php" class="btn btn-warning">Book now!</a>
+                  <a href="reserve.php" class="btn btn-warning">Book now!</a>
                 </div>
             </div>
         </div>
@@ -46,7 +59,7 @@ require_once 'includes/header.php';
                      <span class="fa fa-star"></span>
                      <span class="fa fa-star"></span>
                    </div>
-                   <a href="login.php" class="btn btn-warning">Book now!</a>
+                   <a href="reserve.php" class="btn btn-warning">Book now!</a>
                  </div>
             </div>
         </div>
@@ -67,7 +80,7 @@ require_once 'includes/header.php';
                      <span class="fa fa-star"></span>
                      <span class="fa fa-star"></span>
                    </div>
-                  <a href="login.php" class="btn btn-warning">Book now!</a>
+                  <a href="reserve.php" class="btn btn-warning">Book now!</a>
                  </div>
              </div>
         </div>
@@ -88,7 +101,7 @@ require_once 'includes/header.php';
                      <span class="fa fa-star"></span>
                      <span class="fa fa-star"></span>
                    </div>
-                   <a href="login.php" class="btn btn-warning">Book now!</a>
+                   <a href="reserve.php" class="btn btn-warning">Book now!</a>
                 </div>
             </div>
         </div>
@@ -109,7 +122,7 @@ require_once 'includes/header.php';
                      <span class="fa fa-star"></span>
                      <span class="fa fa-star"></span>
                    </div>
-                  <a href="login.php" class="btn btn-warning">Book now!</a>
+                  <a href="reserve.php" class="btn btn-warning">Book now!</a>
                  </div>
              </div>
         </div>
@@ -130,7 +143,7 @@ require_once 'includes/header.php';
                      <span class="fa fa-star"></span>
                      <span class="fa fa-star"></span>
                    </div>
-                   <a href="login.php" class="btn btn-warning">Book now!</a>
+                   <a href="reserve.php" class="btn btn-warning">Book now!</a>
                 </div>
             </div>
         </div>

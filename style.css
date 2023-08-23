@@ -189,3 +189,64 @@ h1 {
     display: flex;
     align-content: space-around;
   }
+  
+#main-wrapper{
+	border-radius : 10px;
+	background-color: white;
+	border: 3px solid #f1f1f1;
+	width: 500px;
+	margin: 0 auto;
+ align-content: center;
+
+}
+.inner_container{
+	width:450px;
+	margin:0 auto;
+}
+.login_button {
+    background-color: #f6c77b;
+    color: white;
+	margin-top:10px;
+    padding:10px;
+    width: 100%;
+	font-size:18px;
+	font-weight: bold;
+}
+.register_btn{
+	background-color:#1abc9c;
+    color: white;
+	margin-top:10px;
+	margin-bottom:15px;
+	padding:10px;
+    width: 100%;
+	font-size:16px;
+	font-weight: bold;
+	
+}
+.back_btn{
+	margin-top:10px;
+	color: white;
+	margin-bottom:15px;
+    padding: 10px;
+    background-color: #e67e22;
+}
+.logout_button{
+	background-color: #c0392b;
+    color: white;
+	margin-top:10px;
+    padding:10px;
+    width: 100%;
+	font-size:18px;
+	font-weight: bold;
+}
+
+.sign_up_btn {
+	background-color: #3498db;
+    color: white;
+	 padding:10px;
+	margin-top:10px;
+	margin-bottom:10px;
+    width: 100%;
+	font-size:16px;
+	font-weight: bold;
+}

@@ -1,5 +1,6 @@
 <?php
 require_once 'includes/header.php';
+require_once 'includes/registerCheck.php';
 ?>
 
 <div class="landingPage"></div>
@@ -36,21 +37,31 @@ require_once 'includes/header.php';
 </div>
 
 
-<div class="landingBody">
-  <h1>Register</h1>
-  <p> Already have an account? <a href="login.php">Login!</a></p>
-    <div class="logInForms">
-      <form action="includes/register-inc.php" method="post" >
-        <?php if (isset($_GET['error'])) { ?>
-     		  <p class="error"><?php echo $_GET['error']; ?></p>
-      	<?php } ?>
-        <input type="text" name="username" placeholder="Username">
-        <input type="password" name="password" placeholder="Password">
-        <input type="password" name="confirmPassword" placeholder="Confirm password">
-        <button type="submit" name="submit">REGISTER</button>
-      </form>
-    </div>
-</div>
+<div id="main-wrapper">
+		<h2>Registration Form</h2>
+
+			<form action="register.php" method="post">
+
+				<div class="inner_container">
+				
+					<input type="text" placeholder="Enter Username" name="username" autocomplete = "off"  required>
+				
+					<input type="password" placeholder="Enter Password" name="password" required>
+					
+					<input type="password" placeholder="Enter Password" name="cpassword" required>
+					<button name="register" class="sign_up_btn" type="submit">Register</button>
+				
+						<a href="login.php"><button type="button" class="back_btn"><< Back to Login</button></a>
+				</div>
+			</form>
+		
+
+	</div>
+</body>
+
+
+
+
 
 <?php
 require_once 'includes/footer.php';
