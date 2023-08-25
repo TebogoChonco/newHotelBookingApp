@@ -2,47 +2,52 @@
 require_once 'includes/header.php';
 ?>
 
-<!-- reuse the following greeting -->
-<h2> Welcome, <?php echo $_SESSION['username'];?><h2>
-<a class="logout" href= "logout.php">Logout</a> <br><br>
+<body>
+    <h2>Reservation Page</h2>
+    <div class="reserve">
+        <form class="formReserve" action="process_booking.php" method="post">
+            <p class="label" id="reserve">Make your reservation</p><br>
 
-    <hr>
-
-<div class="reserve">
-    <form action="checkout.php" method="post" >
-        <p class="label" id = "reserve">Make your reservation</p><br>
-        <div class="checkin">
-            <div class="checkinA">
-                 <label for="check-in" class="checkout"  id = "check">Check-in:</label><br>
-                 <input type="text"  class="checkout"  name="check-in" placeholder="Check-In" id = "check"><br>
-            </div>
-            <div class="checkinB">
-                <label for="check-oout" class="checkout"  id = "check">Check-Out:</label><br>
-                <input type="text" class="checkout"  name="check-out" placeholder="Check-Out" id = "check"><br>
-            </div>
-        </div> 
-            <label for="hotel" id= "hotel">Hotel:</label><br>
-            <select id="hotels" class="options" >
+            <label for="hotels">Hotels:</label><br>
+            <select id="hotels" class="options" name="hotel_name">
+                <option value="" class="options">--Please choose a hotel--</option>
                 <option value="Madikwe Hills" class="options">Madikwe Hills</option>
-              <option value="Cascades" class="options">Cascades</option>
-               <option value="Manor Hills" class="options">Manor Hills</option>
+                <option value="Cascades" class="options">Cascades</option>
+                <option value="Manor Hills" class="options">Manor Hills</option>
                 <option value="Sun City Resort" class="options">Sun City Resort</option>
                 <option value="The Royal Elephant" class="options">The Royal Elephant</option>
-               <option value="The Riverleaf Hotel" class="options">The Riverleaf Hotel</option>
+                <option value="The Riverleaf Hotel" class="options">The Riverleaf Hotel</option>
             </select><br>
-             <label for="room" class="options" >Room</label><br>
-             <input type="text" class="options" name="room" placeholder="Room"><br>
-        <div class="checkin">       
-             <div class="checkinA">
-                <label for="adults" class="checkout" >Adults</label><br>
-                <input type="text" name="adults" placeholder="Adults"><br>
-            </div>   
-            <div class="checkinB">    
-                <label for="children" class="checkout" >Children</label><br>
-                <input type="text" name="children" placeholder="Children"><br>
-            </div>
-        </div>
-             <button type="submit" name="submit" id="reserveBtn">Check Availability</button>
-         
-    </form>
-</div>
+
+            <label for="guest_name">Guest Name:</label>
+            <input type="text" id="guest_name" name="guest_name" required><br>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" autocomplete="on" required><br>
+
+            <label for="checkin_date">Check-in Date:</label>
+            <input type="date" id="checkin_date" name="checkin_date" required><br>
+
+            <label for="checkout_date">Check-out Date:</label>
+            <input type="date" id="checkout_date" name="checkout_date" required><br>
+
+            <label for="adults">Number of Adults:</label>
+            <input type="number" id="adults" name="adults" min="2" required><br>
+
+            <label for="children">Number of Children:</label>
+            <input type="number" id="children" name="children" min="0" required><br>
+
+            <p>Room Type:</p>
+            <label for="single_room">Single Room</label><br>
+            <input type="radio" id="single_room" name="room_type" value="single" required>
+            <input type="hidden" id="room_price" name="room_price_single" value="200">
+
+            <label for="double_room">Double Room</label><br>
+            <input type="radio" id="double_room" name="room_type" value="double" required>
+            <input type="hidden" id="room_price" name="room_price_double" value="200">
+
+            <button type="submit">Confirm Booking</button>
+        </form>
+    </div>
+</body>
+</html>

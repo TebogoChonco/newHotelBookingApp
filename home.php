@@ -2,11 +2,9 @@
 require_once 'includes/header.php';
 ?>
 
-
-
   <div id="main-wrapper">
 		
-		<h3>Welcome <?php echo $_SESSION['username']; ?></h3>
+		<h5>Welcome <?php echo $_SESSION['username']; ?></h5>
 		
 		<form action="login.php" method="post">
 		
@@ -28,7 +26,7 @@ require_once 'includes/header.php';
                   <h5 class="card-title">Madikwe Hills</h5>
                   <p class="card-text">Taung, NW.</p>
                   <p class="card-summury">
-                    <h3> Summury </h3>
+                    <h5> Summury </h5>
                     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                    </p>
                    <div class="ratings">
@@ -49,7 +47,7 @@ require_once 'includes/header.php';
                    <h5 class="card-title">Cascades</h5>
                    <p class="card-text">Zeerust, NW</p>
                    <p class="card-summury">
-                    <h3> Summury </h3>
+                    <h5> Summury </h5>
                     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                    </p>
                    <div class="ratings">
@@ -70,7 +68,7 @@ require_once 'includes/header.php';
                   <h5 class="card-title">Manor Hills</h5>
                   <p class="card-text">Mafikeng, NW</p>
                   <p class="card-summury">
-                    <h3> Summury </h3>
+                    <h5> Summury </h5>
                     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                    </p>
                    <div class="ratings">
@@ -91,7 +89,7 @@ require_once 'includes/header.php';
                    <h5 class="card-title">Sun City Resort</h5>
                    <p class="card-text">Rustenburg, NW</p>
                    <p class="card-summury">
-                    <h3> Summury </h3>
+                    <h5> Summury </h5>
                     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                    </p>
                    <div class="ratings">
@@ -112,7 +110,7 @@ require_once 'includes/header.php';
                   <h5 class="card-title">The Royal Elephant</h5>
                   <p class="card-text">Phokeng, NW</p>
                   <p class="card-summury">
-                    <h3> Summury </h3>
+                    <h5> Summury </h5>
                     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                    </p>
                    <div class="ratings">
@@ -133,7 +131,7 @@ require_once 'includes/header.php';
                    <h5 class="card-title">The Riverleaf Hotel</h5>
                    <p class="card-text">Hartbeespoort, NW</p>
                    <p class="card-summury">
-                    <h3> Summury </h3>
+                    <h5> Summury </h5>
                     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                    </p>
                    <div class="ratings">
