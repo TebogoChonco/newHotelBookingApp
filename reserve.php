@@ -11,13 +11,14 @@ require_once 'includes/header.php';
             <label for="hotels">Hotels:</label><br>
             <select id="hotels" class="options" name="hotel_name">
                 <option value="" class="options">--Please choose a hotel--</option>
-                <option value="Madikwe Hills" class="options">Madikwe Hills</option>
-                <option value="Cascades" class="options">Cascades</option>
-                <option value="Manor Hills" class="options">Manor Hills</option>
-                <option value="Sun City Resort" class="options">Sun City Resort</option>
-                <option value="The Royal Elephant" class="options">The Royal Elephant</option>
-                <option value="The Riverleaf Hotel" class="options">The Riverleaf Hotel</option>
+                <option value="Madikwe Hills" class="options" data-price="500">Madikwe Hills</option>
+                <option value="Cascades" class="options" data-price="450">Cascades</option>
+                <option value="Manor Hills" class="options" data-price="550">Manor Hills</option>
+                <option value="Sun City Resort" class="options" data-price="600">Sun City Resort</option>
+                <option value="The Royal Elephant" class="options" data-price="490">The Royal Elephant</option>
+                <option value="The Riverleaf Hotel" class="options" data-price="580">The Riverleaf Hotel</option>
             </select><br>
+
 
             <label for="guest_name">Guest Name:</label>
             <input type="text" id="guest_name" name="guest_name" required><br>
@@ -40,7 +41,7 @@ require_once 'includes/header.php';
             <p>Room Type:</p>
             <label for="single_room">Single Room</label><br>
             <input type="radio" id="single_room" name="room_type" value="single" required>
-            <input type="hidden" id="room_price" name="room_price_single" value="200">
+            <input type="hidden" id="room_price" name="room_price_single" value="100">
 
             <label for="double_room">Double Room</label><br>
             <input type="radio" id="double_room" name="room_type" value="double" required>
@@ -50,4 +51,5 @@ require_once 'includes/header.php';
         </form>
     </div>
 </body>
+
 </html>

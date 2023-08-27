@@ -1,21 +1,6 @@
 <?php
+require_once 'includes/header.php';
 
-session_start();
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Database connection details
-    $servername = "localhost";
-    $username = "Tebogo";
-    $password = "Siya2023";
-    $dbname = "hotel_booking";
-
-    // Create connection
-    $conn = new mysqli($servername, $username, $password, $dbname);
-
-    // Check connection
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    }
 
     // Sanitize and validate form inputs
     $hotelName = mysqli_real_escape_string($conn, $_POST["hotel_name"]);
@@ -73,5 +58,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     $conn->close();
-}
+
 ?>
