@@ -1,5 +1,8 @@
 <?php
 require_once 'includes/header.php';
+require_once 'hotel.php';
+require_once 'greeting.php';
+
 ?>
 <body>
     <h1>Booking Confirmation</h1>
@@ -7,9 +10,11 @@ require_once 'includes/header.php';
    
    if(isset($_SESSION['booking_confirmation'])) {
     $confirmation = $_SESSION['booking_confirmation'];
+    echo "<p>Username: " .$confirmation['hotel_name']. "</p>";
     echo "<p>Guest Name: " . $confirmation['guest_name'] . "</p>";
     echo "<p>Email: " . $confirmation['email'] . "</p>";
-    echo "<p>Hotel Name: " . (isset($_POST['hotel_name']) ? $_POST['hotel_name'] : "Not Available") . "</p>";
+    echo "<p>Hotel Name: " . $confirmation['hotel_name'] . "</p>";
+    echo "<p>Room type: " . $confirmation['room_type'] . "</p>";
     echo "<p>Check-in Date: " . $confirmation['checkin_date'] . "</p>";
     echo "<p>Check-out Date: " . $confirmation['checkout_date'] . "</p>";
     echo "<p>Number of Adults: " . $confirmation['adults'] . "</p>";

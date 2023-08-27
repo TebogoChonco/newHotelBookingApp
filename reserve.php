@@ -1,5 +1,6 @@
 <?php
 require_once 'includes/header.php';
+require_once 'greeting.php';
 ?>
 
 <body>
@@ -19,6 +20,8 @@ require_once 'includes/header.php';
                 <option value="The Riverleaf Hotel" class="options" data-price="580">The Riverleaf Hotel</option>
             </select><br>
 
+            <label for="username">Userame:</label>
+            <p ><?php echo $_SESSION['username']; ?></p>
 
             <label for="guest_name">Guest Name:</label>
             <input type="text" id="guest_name" name="guest_name" required><br>

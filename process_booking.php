@@ -1,6 +1,8 @@
 <?php
 require_once 'includes/header.php';
+require_once 'hotel.php';
 
+if ($_SERVER["REQUEST_METHOD"] == "POST") 
 
     // Sanitize and validate form inputs
     $hotelName = mysqli_real_escape_string($conn, $_POST["hotel_name"]);
@@ -11,6 +13,10 @@ require_once 'includes/header.php';
     $adults = intval($_POST["adults"]);
     $children = intval($_POST["children"]);
     $roomType = $_POST["room_type"];
+
+    $hotelPriceRepository = new HotelPriceRepository();
+    $hotelPrice = $hotelPriceRepository->getHotelPrice($hotelName);
+    
     
     // Retrieve room price based on room type
     if ($roomType === "single") {
@@ -25,7 +31,7 @@ require_once 'includes/header.php';
     $numDays = $checkin->diff($checkout)->days;
 
     // Calculate the total price
-    $totalPrice = $roomPrice * $numDays;
+    $totalPrice = ($hotelPrice + $roomPrice) * $numDays;
 
     // Insert booking data into the database
     $sql = "INSERT INTO bookings (hotel_name, guest_name, email, checkin_date, checkout_date, adults, children, room_type, room_price, total_price)
@@ -36,6 +42,7 @@ require_once 'includes/header.php';
 
     if ($conn->query($sql) === TRUE) {
         $bookingConfirmation = [
+            'username' => $userName,
             'guest_name' => $guestName,
             'email' => $email,
             'hotel_name'=>$hotelName,
