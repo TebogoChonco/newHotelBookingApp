@@ -9,13 +9,14 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #f5f5f5;
+  background-color: #fce0be;
 }
 
 header {
   height: 30px;
   background-color: #f2f2f2;
   box-shadow: 0 0 10px #000;
+  
 }
 
 .d-block {
@@ -186,11 +187,11 @@ h5 {
   align-content: space-around;
 }
 
-.greeting{
+.greeting {
   display: flex;
   flex-direction: row;
   padding: 10px;
- justify-content: center;
+  justify-content: center;
 }
 
 #main-wrapper .logout_button {
@@ -201,11 +202,11 @@ h5 {
   border-radius: 4px;
   font-size: 15px;
   cursor: pointer;
-  margin-left: 10%; 
+  margin-left: 10%;
   padding: 2px;
 }
 
-#greeting form{
+#greeting form {
   margin: 0;
   padding: 0;
 }

@@ -1,6 +1,7 @@
 <?php
 require_once 'includes/header.php';
 require_once 'hotel.php';
+require_once 'landingPage.php';
 require_once 'greeting.php';
 
 ?>
@@ -10,7 +11,7 @@ require_once 'greeting.php';
    
    if(isset($_SESSION['booking_confirmation'])) {
     $confirmation = $_SESSION['booking_confirmation'];
-    echo "<p>Username: " .$confirmation['hotel_name']. "</p>";
+    print_r ("<p>You are logged in as: ".$_SESSION['username'])."</p>";
     echo "<p>Guest Name: " . $confirmation['guest_name'] . "</p>";
     echo "<p>Email: " . $confirmation['email'] . "</p>";
     echo "<p>Hotel Name: " . $confirmation['hotel_name'] . "</p>";
