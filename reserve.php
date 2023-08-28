@@ -10,8 +10,8 @@ require_once 'greeting.php';
         <form class="formReserve" action="process_booking.php" method="post">
             <p class="label" id="reserve">Make your reservation</p><br>
 
-            <label for="hotels">Hotels:</label><br>
-            <select id="hotels" class="options" name="hotel_name">
+            <label for="hotels" required>Hotels:</label><br>
+            <select id="hotels" class="options" name="hotel_name" required>
                 <option value="" class="options">--Please choose a hotel--</option>
                 <option value="Madikwe Hills" class="options" data-price="500">Madikwe Hills</option>
                 <option value="Cascades" class="options" data-price="450">Cascades</option>
@@ -37,7 +37,7 @@ require_once 'greeting.php';
             <input type="date" id="checkout_date" name="checkout_date" required><br>
 
             <label for="adults">Number of Adults:</label>
-            <input type="number" id="adults" name="adults" min="2" required><br>
+            <input type="number" id="adults" name="adults" min="1" required><br>
 
             <label for="children">Number of Children:</label>
             <input type="number" id="children" name="children" min="0" required><br>

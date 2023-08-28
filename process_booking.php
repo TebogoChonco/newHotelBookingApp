@@ -31,11 +31,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
     $numDays = $checkin->diff($checkout)->days;
 
     // Calculate the total price
-    $totalPrice = ($hotelPrice + $roomPrice) * $numDays;
+$totalPrice = ($hotelPrice + $roomPrice) * $numDays;
 
-    // Insert booking data into the database
-    $sql = "INSERT INTO bookings (hotel_name, guest_name, email, checkin_date, checkout_date, adults, children, room_type, room_price, total_price)
-            VALUES ('$hotelName', '$guestName', '$email', '$checkinDate', '$checkoutDate', $adults, $children, '$roomType', $roomPrice, $totalPrice)";
+// Calculate the tax amount (15%)
+$taxRate = 0.15;
+$taxAmount = $totalPrice * $taxRate;
+
+// Add tax to the total price
+$totalPriceWithTax = $totalPrice + $taxAmount;
+
+// Insert booking data into the database
+$sql = "INSERT INTO bookings (hotel_name, guest_name, email, checkin_date, checkout_date, adults, children, room_type, room_price, total_price)
+        VALUES ('$hotelName', '$guestName', '$email', '$checkinDate', '$checkoutDate', $adults, $children, '$roomType', $roomPrice, $totalPriceWithTax)";
 
     // Debug: Check the value of $_POST['hotel_name']
     var_dump($_POST['hotel_name']);
@@ -51,7 +58,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
             'adults' => $adults,
             'children' => $children,
             'room_type' => $roomType,
-            'total_price' => $totalPrice
+            'total_price' => $totalPrice,
+            'total_with_vat'=>$totalPriceWithTax
         ];
 
         $_SESSION['booking_confirmation'] = $bookingConfirmation;

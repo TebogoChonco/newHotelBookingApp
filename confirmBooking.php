@@ -5,9 +5,12 @@ require_once 'landingPage.php';
 require_once 'greeting.php';
 
 ?>
-<body>
+
+<body class="confirm">
     <h1>Booking Confirmation</h1>
+    <hr>
     <?php
+   
    
    if(isset($_SESSION['booking_confirmation'])) {
     $confirmation = $_SESSION['booking_confirmation'];
@@ -20,13 +23,17 @@ require_once 'greeting.php';
     echo "<p>Check-out Date: " . $confirmation['checkout_date'] . "</p>";
     echo "<p>Number of Adults: " . $confirmation['adults'] . "</p>";
     echo "<p>Number of Children: " . $confirmation['children'] . "</p>";
-    echo "<p>Total Price: R" . number_format($confirmation['total_price'], 2) . "</p>";    
+    echo "<p>Total Price: R" . number_format($confirmation['total_price'], 2) . "</p>";   
+    echo "<p>Total Price with tax: R" . number_format($confirmation['total_with_vat'], 2) . "</p>"; 
+  
 }
-    
- else {
-        echo "<p>No booking confirmation found.</p>";
+
+    else {
+    echo "<p>No booking confirmation found.</p>";
     }
 
-?>
+    ?>
+<hr>
 </body>
+
 </html>

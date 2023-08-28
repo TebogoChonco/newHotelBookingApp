@@ -11,7 +11,7 @@ require_once 'greeting.php';
     <div class="row" id="hotelCards">
         <h6 class="col-sm-12">Stay at one of our beautiful resorts</h6>
        
-        <div class="col-sm-6">
+        <div class="col-sm-4">
             <div class="card">
                 <div class="card-body">
                     <img width="120px" src="./images/home4.jpg" alt="">
@@ -22,6 +22,9 @@ require_once 'greeting.php';
                     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
                     et dolore magna aliqua.
                     </p>
+                    <div class="hotel_price">
+                        From R500
+                    </div>
                     <div class="ratings">
                         <span class="fa fa-star checked"></span>
                         <span class="fa fa-star checked"></span>
@@ -33,7 +36,7 @@ require_once 'greeting.php';
                 </div>
             </div>
         </div>
-        <div class="col-sm-6">
+        <div class="col-sm-4">
             <div class="card">
                 <div class="card-body">
                     <img width="120px" src="./images/home.jpg" alt="">
@@ -44,6 +47,9 @@ require_once 'greeting.php';
                     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
                     et dolore magna aliqua.
                     </p>
+                    <div class="hotel_price">
+                        From R450
+                    </div>
                     <div class="ratings">
                         <span class="fa fa-star checked"></span>
                         <span class="fa fa-star checked"></span>
@@ -55,7 +61,7 @@ require_once 'greeting.php';
                 </div>
             </div>
         </div>
-        <div class="col-sm-6">
+        <div class="col-sm-4">
             <div class="card">
                 <div class="card-body">
                     <img width="120px" src="./images/home2.jpg" alt="">
@@ -66,6 +72,9 @@ require_once 'greeting.php';
                     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
                     et dolore magna aliqua.
                     </p>
+                    <div class="hotel_price">
+                        From R550
+                    </div>
                     <div class="ratings">
                         <span class="fa fa-star checked"></span>
                         <span class="fa fa-star checked"></span>
@@ -77,7 +86,7 @@ require_once 'greeting.php';
                 </div>
             </div>
         </div>
-        <div class="col-sm-6">
+        <div class="col-sm-4">
             <div class="card">
                 <div class="card-body">
                     <img width="120px" src="./images/home6.jpg" alt="">
@@ -88,6 +97,9 @@ require_once 'greeting.php';
                     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
                     et dolore magna aliqua.
                     </p>
+                    <div class="hotel_price">
+                        From R600
+                    </div>
                     <div class="ratings">
                         <span class="fa fa-star checked"></span>
                         <span class="fa fa-star checked"></span>
@@ -99,7 +111,7 @@ require_once 'greeting.php';
                 </div>
             </div>
         </div>
-        <div class="col-sm-6">
+        <div class="col-sm-4">
             <div class="card">
                 <div class="card-body">
                     <img width="120px" src="./images/home5.jpg" alt="">
@@ -110,6 +122,9 @@ require_once 'greeting.php';
                     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
                     et dolore magna aliqua.
                     </p>
+                    <div class="hotel_price">
+                        From R490
+                    </div>
                     <div class="ratings">
                         <span class="fa fa-star checked"></span>
                         <span class="fa fa-star checked"></span>
@@ -121,7 +136,7 @@ require_once 'greeting.php';
                 </div>
             </div>
         </div>
-        <div class="col-sm-6">
+        <div class="col-sm-4">
             <div class="card">
                 <div class="card-body">
                     <img width="120px" src="./images/home1.jpg" alt="">
@@ -132,6 +147,9 @@ require_once 'greeting.php';
                     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
                     et dolore magna aliqua.
                     </p>
+                    <div class="hotel_price">
+                        From R580
+                    </div>
                     <div class="ratings">
                         <span class="fa fa-star checked" id="checked"></span>
                         <span class="fa fa-star checked"></span>
