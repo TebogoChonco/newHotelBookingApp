@@ -16,7 +16,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
 
     $hotelPriceRepository = new HotelPriceRepository();
     $hotelPrice = $hotelPriceRepository->getHotelPrice($hotelName);
-    
+     
     
     // Retrieve room price based on room type
     if ($roomType === "single") {
@@ -49,7 +49,7 @@ $sql = "INSERT INTO bookings (hotel_name, guest_name, email, checkin_date, check
 
     if ($conn->query($sql) === TRUE) {
         $bookingConfirmation = [
-            'username' => $userName,
+            //'username' => $userName,
             'guest_name' => $guestName,
             'email' => $email,
             'hotel_name'=>$hotelName,

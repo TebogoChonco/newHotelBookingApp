@@ -4,10 +4,13 @@ require_once 'landingPage.php';
 require_once 'greeting.php';
 ?>
 
-<body>
+<body> 
     <h2>Reservation Page</h2>
     <div class="reserve">
         <form class="formReserve" action="process_booking.php" method="post">
+
+        <!-- <div>You are logged in as: <?php echo $_SESSION['username']; ?></div><br> -->
+
             <p class="label" id="reserve">Make your reservation</p><br>
 
             <label for="hotels" required>Hotels:</label><br>
@@ -20,38 +23,34 @@ require_once 'greeting.php';
                 <option value="The Royal Elephant" class="options" data-price="490">The Royal Elephant</option>
                 <option value="The Riverleaf Hotel" class="options" data-price="580">The Riverleaf Hotel</option>
             </select><br>
+<label for="guest_name">Guest Name:</label>
+<input type="text" id="guest_name" name="guest_name" required><br>
 
-            <label for="username">Userame:</label>
-            <p ><?php echo $_SESSION['username']; ?></p>
+<label for="email">Email:</label>
+<input type="email" id="email" name="email" autocomplete="on" required><br>
 
-            <label for="guest_name">Guest Name:</label>
-            <input type="text" id="guest_name" name="guest_name" required><br>
+<label for="checkin_date">Check-in Date:</label>
+<input type="date" id="checkin_date" name="checkin_date" required><br>
 
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" autocomplete="on" required><br>
+<label for="checkout_date">Check-out Date:</label>
+<input type="date" id="checkout_date" name="checkout_date" required><br>
 
-            <label for="checkin_date">Check-in Date:</label>
-            <input type="date" id="checkin_date" name="checkin_date" required><br>
+<label for="adults">Number of Adults:</label>
+<input type="number" id="adults" name="adults" min="1" required><br>
 
-            <label for="checkout_date">Check-out Date:</label>
-            <input type="date" id="checkout_date" name="checkout_date" required><br>
+<label for="children">Number of Children:</label>
+<input type="number" id="children" name="children" min="0" required><br>
 
-            <label for="adults">Number of Adults:</label>
-            <input type="number" id="adults" name="adults" min="1" required><br>
+<p>Room Type:</p>
+<label for="single_room">Single Room</label><br>
+<input type="radio" id="single_room" name="room_type" value="single" required>
 
-            <label for="children">Number of Children:</label>
-            <input type="number" id="children" name="children" min="0" required><br>
+<label for="double_room">Double Room</label><br>
+<input type="radio" id="double_room" name="room_type" value="double" required>
 
-            <p>Room Type:</p>
-            <label for="single_room">Single Room</label><br>
-            <input type="radio" id="single_room" name="room_type" value="single" required>
-            <input type="hidden" id="room_price" name="room_price_single" value="100">
+<button type="submit">Confirm Booking</button>
 
-            <label for="double_room">Double Room</label><br>
-            <input type="radio" id="double_room" name="room_type" value="double" required>
-            <input type="hidden" id="room_price" name="room_price_double" value="200">
 
-            <button type="submit">Confirm Booking</button>
         </form>
     </div>
 </body>

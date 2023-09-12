@@ -4,7 +4,7 @@ require_once 'hotel.php';
 require_once 'landingPage.php';
 require_once 'greeting.php';
 
-?>
+?> 
 
 <body class="confirm">
     <h1>Booking Confirmation</h1>
@@ -33,6 +33,9 @@ require_once 'greeting.php';
     }
 
     ?>
+
+<a href="login.php"><button type="button" class="profile_btn">Go to Profile</button></a>
+
 <hr>
 </body>
 
