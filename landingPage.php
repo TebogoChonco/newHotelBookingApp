@@ -11,13 +11,13 @@ require_once 'includes/header.php';
   </ol>
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img class="d-block " src="./images/home3.jpg" alt="First slide">
+      <img class="d-block " src="./images/c1.png" alt="First slide">
     </div>
     <div class="carousel-item">
-      <img class="d-block " src="./images/home.jpg" alt="Second slide">
+      <img class="d-block " src="./images/c4.png" alt="Second slide">
     </div>
     <div class="carousel-item">
-      <img class="d-block " src="./images/home1.jpg" alt="Third slide">
+      <img class="d-block " src="./images/c5.png" alt="Third slide">
     </div>
   </div>
   <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -29,7 +29,8 @@ require_once 'includes/header.php';
     <span class="sr-only">Next</span>
   </a>
   <div class="content">
-    <h1>North West</h1>
+    <br>
+    <h2>North West</h2>
     <h5>Let's explore this beautiful province</h5>
   </div>
 </div>
