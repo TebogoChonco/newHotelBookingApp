@@ -23,7 +23,7 @@ require_once 'landingPage.php';
 						<a href="login.php"><button type="button" class="back_btn"><< Back to Login</button></a>
 				</div>
 			</form>
-		
+		 
 
 	</div>
 </body>

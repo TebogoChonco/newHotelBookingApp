@@ -24,14 +24,15 @@ require_once 'greeting.php';
             <h6><?php echo $row["location"]; ?></h6>
 
             <p>Summary:
-              <br>
-            </Summary><?php echo $row["summury"]; ?></p>
+                <br>
+                </Summary><?php echo $row["summury"]; ?>
+            </p>
 
             <h5>R <?php echo $row["hotel_price"]; ?></h5>
 
-            <h7>Ratings: <?php echo $row["rating"]; ?>
-             <span class="fa fa-star checked"></span>   
-            </h7>
+            <p>Ratings: <?php echo $row["rating"]; ?>
+                <span class="fa fa-star checked"></span>
+            </p>
 
             <input type="hidden" name="hidden_name" value="<?php echo $row["hotel_name"]; ?>" />
 
@@ -40,12 +41,12 @@ require_once 'greeting.php';
             <input type="hidden" name="hidden_summury" value="<?php echo $row["summury"]; ?>" />
             <input type="hidden" name="hidden_price" value="<?php echo $row["hotel_price"]; ?>" />
             <input type="hidden" name="hidden_rating" value="<?php echo $row["rating"]; ?>" />
-
+           
             <a href="reserve.php" class="btn btn-warning">Book now!</a>
         </div>
     </form>
 
     <?php
-             } };
-        ?>
+     } };
+    ?>
 </div>
