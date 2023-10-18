@@ -36,7 +36,7 @@
         <br>
     </div>
 
-    <div class="welcome">
+    <div class="main-wrapper">
         <div class="py-5" id="register">
 
             <h1>Registration Form</h1>

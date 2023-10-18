@@ -43,7 +43,7 @@ header {
   display: flex;
 }
 
-.content h2 {
+.content h2 { 
   color: hsl(0, 0%, 99%);
   font-size: 20px;
   font-family: fantasy;

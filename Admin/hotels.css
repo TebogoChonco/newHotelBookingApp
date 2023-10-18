@@ -5,37 +5,8 @@
     font-family: 'Poppins', sans-serif;
 }
 
-.welcome {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-      url(../Images/wallpaper.jpg);
-    height: 70vh;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: relative;
-    margin-bottom: 10px;
-    opacity: 0.8;
-    border-radius: 4px;
-  }
-  
-  .welcome-text {
-    font-size: 3rem;
-    text-align: center;
-    padding: 15%;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    color: #f4ffff;
-    opacity: 0.6;
-    transition: 0.3s;
-  }
-  
-  .welcome-text:hover {
-    opacity: 1;
-    color: #fff;
-  }
-
 body {
+    background-color: #ebd6ac;
     min-height: 100vh;
 }
 a {
@@ -44,16 +15,20 @@ a {
 li {
     list-style: none;
 }
-h1{
-    color: #d3d7d9;
-    text-align: center;
-}
-.logo h1{
-    color: #5094bf;
-    text-align: center;
+
+h1,
+h2,
+h4,
+h5 {
+  text-align: center;
+  margin-top: 20px;
 }
 
-.btn {
+h6{
+  text-transform: uppercase;
+  text-align: center;
+}
+/* .btn {
     background: #5094bf;
     color: white;
     padding: 5px 10px;
@@ -64,7 +39,7 @@ h1{
     background: white;
     padding: 3px 8px;
     border: 2px solid #5094bf;
-}
+} */
 .title {
     display: flex;
     align-items: center;
@@ -229,7 +204,7 @@ td {
     width: 40px;
 }
 
-form {
+  form {
     max-width: 300px;
     margin: 20px auto;
     padding: 20px;
@@ -246,11 +221,37 @@ form {
   
   form button {
     font-size: 20px;
-    background-color: rgb(56, 98, 132);
+    background-color: #a87309;
     color: #fff;
     padding: 2px;
   }  
 
+  button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin: 3px;
+    background-color: #a87309;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #f5cd70;
+  }
+  
+  .label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    text-transform: uppercase;
+    color: #1f3e3a;
+  }
 
 @media screen and (max-width: 1050px) {
     .side-menu li {
