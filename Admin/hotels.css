@@ -12,6 +12,7 @@ body {
 a {
     text-decoration: none;
 }
+
 li {
     list-style: none;
 }
@@ -65,7 +66,7 @@ td {
 }
 .side-menu {
     position: fixed;
-    background: #5094bf;
+    background:  #b89467;
     width: 20vw;
     min-height: 100vh;
     display: flex;
@@ -86,7 +87,7 @@ td {
 }
 .side-menu li:hover {
     background: white;
-    color: #5094bf;
+    color: #e9ba81;
 }
 .container {
     position: absolute; 

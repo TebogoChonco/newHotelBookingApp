@@ -30,7 +30,7 @@ ini_set('display_errors', 1);
 <body>
     <div class="navbar">
         <a class="logo">
-            <h1>Hotel Booking Admin Dashboard</h1>
+            <h2>Hotel Booking Admin Dashboard</h2>
         </a>
         <br>
         <br>

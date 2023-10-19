@@ -34,13 +34,15 @@ if (isset($_POST['loginBtn'])) {
         } else {
             // Password is incorrect
             $_SESSION['login_error'] = "Incorrect password";
-            header("Location: login.php");
+            echo"Incorrect password";
+            // header("Location: login.php");
             exit();
         }
     } else {
         // User not found
         $_SESSION['login_error'] = "User not found";
-        header("Location: login.php");
+        echo"User not found";
+        // header("Location: login.php");
         exit();
     }
 }
