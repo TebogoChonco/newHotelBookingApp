@@ -31,7 +31,7 @@ require_once 'includes/header.php';
   <div class="content">
     <br>
     <h2>North West</h2>
-    <h5>Let's explore this beautiful province</h5>
+    <h6>Let's explore this beautiful province</h6>
   </div>
 </div>
 </div>

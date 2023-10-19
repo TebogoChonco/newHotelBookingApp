@@ -32,10 +32,10 @@ ini_set('display_errors', 1);
 <body>
     <header>
         <nav>
-            <ul>
+            <ul>Hotel Booking App
                 <li><a href="index.php">Home</a></li>
                 <li><a href="home.php">Hotels</a></li>
-                <li><a href="reserve.php">Bookings</a></li>
+                <li><a href="reserve.php">Reservations</a></li>
                 <li><a href="gallery.php">Gallery</a></li>
                 <li><a href="aboutUs.php">About us</a></li>
                 <li><a href="profile.php">Profile</a></li>

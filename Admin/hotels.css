@@ -28,18 +28,26 @@ h6{
   text-transform: uppercase;
   text-align: center;
 }
-/* .btn {
-    background: #5094bf;
-    color: white;
-    padding: 5px 10px;
-    text-align: center;
-}
-.btn:hover {
-    color: #5094bf;
-    background: white;
-    padding: 3px 8px;
-    border: 2px solid #5094bf;
-} */
+
+ul {
+    float: right;
+    position: relative;
+    right: 15%;
+    
+  }
+  
+  ul li {
+    display: flex;
+    list-style: none;
+  }
+  
+  ul li a {
+  
+    color: #000000;
+    font-size: 14px;
+    padding: 0px 0px 0px 10px;
+  }
+
 .title {
     display: flex;
     align-items: center;

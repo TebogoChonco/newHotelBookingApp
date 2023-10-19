@@ -3,60 +3,40 @@ require_once 'includes/header.php';
 require_once 'landingPage.php';
 require_once 'greeting.php';
 ?>
-<br>
 
-<div class="gallery">
-    <div class="gallery_item">
-    <img width="200" src="./images/front3.jpg" alt="">
-    <img width="200" src="./images/pool4.jpg" alt="">
-    <img width="200" src="./images/bed4.jpg" alt="">
-    <img width="200" src="./images/twin4.jpg" alt="">
-    <img width="200" src="./images/bath4.jpg" alt="">
-    <p class="img">Madikwe Hills</p>
-    </div>
-<br>
-    <div class="gallery_item">
-    <img width="200" src="./images/pool1.jpg" alt="">
-    <img width="200" src="./images/pool1.jpg" alt="">
-    <img width="200" src="./images/bed1.jpg" alt="">
-    <img width="200" src="./images/twin1.jpg" alt="">
-    <img width="200" src="./images/bath1.jpg" alt="">
-    <p class="img">Cascades</p>
-    </div>
 
-    <div class="gallery_item">
-    <img width="200" src="./images/front4.jpg" alt="">
-    <img width="200" src="./images/front4.jpg" alt="">
-    <img width="200" src="./images/bed2.jpg" alt="">
-    <img width="200" src="./images/twin2.jpg" alt="">
-    <img width="200" src="./images/bath2.jpg" alt="">
-    <p class="img">Manor Hills</p>
-    </div>
+<h2>Hotels Gallery</h2>
+<?php
+              $query = "SELECT * FROM hotels WHERE isFeatured = 1 ORDER BY ID";
+                $result = mysqli_query($conn, $query);
+                if (!$result) {
+               die("Query failed: " . mysqli_error($conn));
+                 }
+              if (mysqli_num_rows($result) > 0) {
+           while ($row = mysqli_fetch_array($result)) {
+   ?>
 
-    <div class="gallery_item">
-    <img width="200" src="./images/front1.jpg" alt="">
-    <img width="200" src="./images/pool5.jpg" alt="">
-    <img width="200" src="./images/bed3.jpg" alt="">
-    <img width="200" src="./images/twin3.jpg" alt="">
-    <img width="200" src="./images/bath3.jpg" alt="">
-    <p class="img">Sun City Resort</p>
-    </div>
+<div class="hotels">
+    <form method="post" action="hotels.php?action=add&id=<?php echo $row["ID"]; ?>">
+        <div class="display">
+            <img src="./Images/<?php echo $row["image"]; ?>" class="img-responsive" width="250px" /><br />
 
-    <div class="gallery_item">
-    <img width="200" src="./images/front5.jpg" alt="">
-    <img width="200" src="./images/pool3.jpg" alt="">
-    <img width="200" src="./images/bed5.jpg" alt="">
-    <img width="200" src="./images/twin5.jpg" alt="">
-    <img width="200" src="./images/bath5.jpg" alt="">
-    <p class="img">The Royal Elephant</p>
-    </div>
+            <h4><?php echo $row["hotel_name"]; ?></h4>
 
-    <div class="gallery_item">
-    <img width="200" src="./images/front2.jpg" alt="">
-    <img width="200" src="./images/pool2.jpg" alt="">
-    <img width="200" src="./images/bed5.jpg" alt="">
-    <img width="200" src="./images/twin2.jpg" alt="">
-    <img width="200" src="./images/bath2.jpg" alt="">
-    <p class="img">The Riverleaf Hotel</p>
-    </div>
+            <h6><?php echo $row["location"]; ?></h6>
+
+            <input type="hidden" name="hidden_name" value="<?php echo $row["hotel_name"]; ?>" />
+
+            <input type="hidden" name="hidden_location" value="<?php echo $row["location"]; ?>" />
+
+            <input type="hidden" name="hidden_summury" value="<?php echo $row["summury"]; ?>" />
+            <input type="hidden" name="hidden_price" value="<?php echo $row["hotel_price"]; ?>" />
+            <input type="hidden" name="hidden_rating" value="<?php echo $row["rating"]; ?>" />
+           
+        </div>
+    </form>
+
+    <?php
+     } };
+    ?>
 </div>

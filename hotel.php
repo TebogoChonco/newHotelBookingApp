@@ -1,44 +1,52 @@
 <?php
+require_once 'includes/header.php';
+require_once 'landingPage.php';
+require_once 'greeting.php';
+?>
 
-class Hotel {
-    private $name;
-    private $price;
+<?php
+              $query = "SELECT * FROM hotels WHERE isFeatured = 1 ORDER BY ID";
+                $result = mysqli_query($conn, $query);
+                if (!$result) {
+               die("Query failed: " . mysqli_error($conn));
+                 }
+              if (mysqli_num_rows($result) > 0) {
+           while ($row = mysqli_fetch_array($result)) {
+   ?>
 
-    public function __construct($name, $price) {
-        $this->name = $name;
-        $this->price = $price;
-    }
+<div class="hotels">
+    <form method="post" action="hotels.php?action=add&id=<?php echo $row["ID"]; ?>">
+        <div class="display">
+            <img src="./Images/<?php echo $row["image"]; ?>" class="img-responsive" width="250px" /><br />
 
-    public function getName() {
-        return $this->name;
-    }
+            <h4><?php echo $row["hotel_name"]; ?></h4>
 
-    public function getPrice() {
-        return $this->price;
-    }
-}
+            <h6><?php echo $row["location"]; ?></h6>
 
-class HotelPriceRepository {
-    private $hotels = [];
+            <p>Summary:
+                <br>
+                </Summary><?php echo $row["summury"]; ?>
+            </p>
 
-    public function __construct() {
-        // Initialize hotel data
-        $this->hotels[] = new Hotel("Madikwe Hills", 500);
-        $this->hotels[] = new Hotel("Cascades", 450);
-        $this->hotels[] = new Hotel("Manor Hills", 550);
-        $this->hotels[] = new Hotel("Sun City Resort", 600);
-        $this->hotels[] = new Hotel("The Royal Elephant", 490);
-        $this->hotels[] = new Hotel("The Riverleaf Hotel", 580);
-        
-    }
+            <h5>R <?php echo $row["hotel_price"]; ?></h5>
 
-    public function getHotelPrice($hotelName) {
-        foreach ($this->hotels as $hotel) {
-            if ($hotel->getName() === $hotelName) {
-                return $hotel->getPrice();
-            }
-        }
-        return 0; // Default price if hotel not found
-    }
-}
+            <p>Ratings: <?php echo $row["rating"]; ?>
+                <span class="fa fa-star checked"></span>
+            </p>
 
+            <input type="hidden" name="hidden_name" value="<?php echo $row["hotel_name"]; ?>" />
+
+            <input type="hidden" name="hidden_location" value="<?php echo $row["location"]; ?>" />
+
+            <input type="hidden" name="hidden_summury" value="<?php echo $row["summury"]; ?>" />
+            <input type="hidden" name="hidden_price" value="<?php echo $row["hotel_price"]; ?>" />
+            <input type="hidden" name="hidden_rating" value="<?php echo $row["rating"]; ?>" />
+           
+            <a href="reserve.php" class="btn btn-warning">Book now!</a>
+        </div>
+    </form>
+
+    <?php
+     } };
+    ?>
+</div>
