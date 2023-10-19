@@ -1,4 +1,7 @@
 <?php
+
+session_start();
+
 require_once 'includes/header.php';
 require_once 'hotel.php';
 require_once 'landingPage.php';
@@ -26,12 +29,10 @@ $result = $conn->query($sql);
 
         // Calculate the total price including both hotel and room price
         $hotelPrice = $confirmation['hotel_price'];
-        // $_SESSION['booking_confirmation']['hotel_price'] = $hotelPrice;
+        $_SESSION['booking_confirmation']['hotel_price'] = $hotelPrice;
         $roomPrice = ($confirmation['room_type'] === 'single') ? 100 : 200; // Adjust room prices as needed
         $totalPrice = ($hotelPrice + $roomPrice) * $confirmation['adults'];
         echo "<p>Total Price: R" . number_format($totalPrice, 2) . "</p>";
-
-        
 
         // Calculate total price with tax (assuming a 15% tax rate)
         $taxRate = 0.15; // 15% tax rate
