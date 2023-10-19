@@ -3,7 +3,10 @@ require_once 'includes/header.php';
 require_once 'hotel.php';
 require_once 'landingPage.php';
 require_once 'greeting.php';
-?>
+
+$sql = "SELECT `hotel_name`, `hotel_price` FROM hotels";
+$result = $conn->query($sql);
+?> 
 
 <body class="confirm">
     <h1>Booking Confirmation</h1>
@@ -21,9 +24,14 @@ require_once 'greeting.php';
         echo "<p>Number of Adults: " . $confirmation['adults'] . "</p>";
         echo "<p>Number of Children: " . $confirmation['children'] . "</p>";
 
-        // Calculate total price without tax
-        $totalPrice = $confirmation['total_price'];
+        // Calculate the total price including both hotel and room price
+        $hotelPrice = $confirmation['hotel_price'];
+        // $_SESSION['booking_confirmation']['hotel_price'] = $hotelPrice;
+        $roomPrice = ($confirmation['room_type'] === 'single') ? 100 : 200; // Adjust room prices as needed
+        $totalPrice = ($hotelPrice + $roomPrice) * $confirmation['adults'];
         echo "<p>Total Price: R" . number_format($totalPrice, 2) . "</p>";
+
+        
 
         // Calculate total price with tax (assuming a 15% tax rate)
         $taxRate = 0.15; // 15% tax rate
