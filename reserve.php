@@ -53,7 +53,9 @@ $result = $conn->query($sql);
 
                 <p>Total Cost: <span id="total_cost">0</span></p>
 
+                <a href="confirmBooking.php">
                 <button type="submit">Confirm Booking</button>
+                </a>
             </form>
         </div>
 
