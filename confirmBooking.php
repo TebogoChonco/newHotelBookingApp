@@ -1,42 +1,51 @@
 <?php
 require_once 'includes/header.php';
-require_once 'hotel.php';
-require_once 'landingPage.php';
-require_once 'greeting.php';
 
-?> 
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Retrieve user-entered information
+    $hotelName = $_POST['hotel_name'];
+    $guestName = $_POST['guest_name'];
+    $email = $_POST['email'];
+    $checkinDate = $_POST['checkin_date'];
+    $checkoutDate = $_POST['checkout_date'];
+    $adults = $_POST['adults'];
+    $children = $_POST['children'];
+    $roomType = $_POST['room_type'];
+    $totalCost = $_POST['total_cost']; // Assuming you're passing this value in the form
 
-<body class="confirm">
-    <h1>Booking Confirmation</h1>
-    <hr>
-    <?php
-   
-   
-   if(isset($_SESSION['booking_confirmation'])) {
-    $confirmation = $_SESSION['booking_confirmation'];
-    print_r ("<p>You are logged in as: ".$_SESSION['username'])."</p>";
-    echo "<p>Guest Name: " . $confirmation['guest_name'] . "</p>";
-    echo "<p>Email: " . $confirmation['email'] . "</p>";
-    echo "<p>Hotel Name: " . $confirmation['hotel_name'] . "</p>";
-    echo "<p>Room type: " . $confirmation['room_type'] . "</p>";
-    echo "<p>Check-in Date: " . $confirmation['checkin_date'] . "</p>";
-    echo "<p>Check-out Date: " . $confirmation['checkout_date'] . "</p>";
-    echo "<p>Number of Adults: " . $confirmation['adults'] . "</p>";
-    echo "<p>Number of Children: " . $confirmation['children'] . "</p>";
-    echo "<p>Total Price: R" . number_format($confirmation['total_price'], 2) . "</p>";   
-    echo "<p>Total Price with tax: R" . number_format($confirmation['total_with_vat'], 2) . "</p>"; 
-  
+    // Display the information
+    echo "<h2>Confirmation Page</h2>";
+    echo "<p>Hotel: $hotelName</p>";
+    echo "<p>Guest Name: $guestName</p>";
+    echo "<p>Email: $email</p>";
+    echo "<p>Check-in Date: $checkinDate</p>";
+    echo "<p>Check-out Date: $checkoutDate</p>";
+    echo "<p>Number of Adults: $adults</p>";
+    echo "<p>Number of Children: $children</p>";
+    echo "<p>Room Type: $roomType</p>";
+    echo "<p>Total Cost: $totalCost</p>";
+
+// Assuming $totalCost is the original total cost calculated in your script
+$vatRate = 0.15; // 15% VAT rate
+
+// Calculate total cost with VAT
+$totalCostWithVAT = $totalCost * (1 + $vatRate);
+
+echo "<p>Total Cost: R" . number_format($totalCost, 2) . "</p>";
+echo "<p>Total Price with 15% VAT: R" . number_format($totalCostWithVAT, 2) . "</p>";
+
+
+} else {
+    // Redirect to the reservation page if the form is not submitted
+    header("Location: reserve.php");
+    exit();
 }
 
-    else {
-    echo "<p>No booking confirmation found.</p>";
-    }
+?>
 
-    ?>
-
-<a href="login.php"><button type="button" class="profile_btn">Go to Profile</button></a>
-
-<hr>
-</body>
-
-</html>
+<a href="printBooking.php">
+    <button type="submit">Print Booking Confirmation</button>
+</a>
+<?php
+require_once 'includes/footer.php'; // Assuming you have a footer file
+?>

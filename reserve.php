@@ -4,26 +4,25 @@ require_once 'landingPage.php';
 require_once 'greeting.php';
 $sql = "SELECT `hotel_name`, `hotel_price` FROM hotels";
 $result = $conn->query($sql);
-
 ?>
 
 <body>
     <h2>Reservation Page</h2>
     <div class="reservation">
         <div class="reserve">
-            <form class="formReserve" action="process_booking.php" method="post">
+            <form class="formReserve" action="confirmBooking.php" method="post">
                 <p class="label" id="reserve">Make your reservation</p><br>
 
                 <label for="hotels" required>Hotels:</label><br>
                 <select id="hotels" class="options" name="hotel_name" required>
                     <option value="" class="options">--Please choose a hotel--</option>
                     <?php
-                if ($result->num_rows > 0) {
-                    while ($row = $result->fetch_assoc()) {
-                        echo '<option value="' . $row['hotel_name'] . '" data-price="' . $row['hotel_price'] . '">' . $row['hotel_name'] . '</option>';
+                    if ($result->num_rows > 0) {
+                        while ($row = $result->fetch_assoc()) {
+                            echo '<option value="' . $row['hotel_name'] . '" data-price="' . $row['hotel_price'] . '">' . $row['hotel_name'] . '</option>';
+                        }
                     }
-                }
-                ?>
+                    ?>
                 </select><br>
 
                 <label for="guest_name">Guest Name:</label>
@@ -52,11 +51,16 @@ $result = $conn->query($sql);
                 <input type="radio" id="double_room" name="room_type" value="double" required>
 
                 <p>Total Cost: <span id="total_cost">0</span></p>
+                <!-- Add this input field within the form -->
+                <input type="hidden" id="total_cost_input" name="total_cost" value="0">
 
                 <a href="confirmBooking.php">
-                <button type="submit">Confirm Booking</button>
+                    <button type="submit">Confirm Booking</button>
                 </a>
             </form>
+            <h5>For any further inquiries, please contact our
+                <br>provincial support center on +27 (00) 222 - 5432. </h5>
+
         </div>
 
         <div id="closestHotels">
@@ -65,139 +69,149 @@ $result = $conn->query($sql);
                 <p>Hotels closest in price:</p>
                 <ul id="closestHotelsList"></ul><br>
             </form>
-
         </div>
 
         <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const hotelsSelect = document.getElementById("hotels");
-            const closestHotelsDiv = document.getElementById("closestHotels");
-            const closestHotelsList = document.getElementById("closestHotelsList");
+            document.addEventListener("DOMContentLoaded", function () {
+                const hotelsSelect = document.getElementById("hotels");
+                const closestHotelsDiv = document.getElementById("closestHotels");
+                const closestHotelsList = document.getElementById("closestHotelsList");
 
-            hotelsSelect.addEventListener("change", function() {
-                const selectedHotel = hotelsSelect.options[hotelsSelect.selectedIndex];
-                const selectedHotelPrice = parseFloat(selectedHotel.getAttribute("data-price"));
-                const allOptions = Array.from(hotelsSelect.options);
+                hotelsSelect.addEventListener("change", function () {
+                    const selectedHotel = hotelsSelect.options[hotelsSelect.selectedIndex];
+                    const selectedHotelPrice = parseFloat(selectedHotel.getAttribute("data-price"));
+                    const allOptions = Array.from(hotelsSelect.options);
 
-                // Filter the options to find the two closest hotels in price
-                const closestHotels = allOptions
-                    .filter(option => option.value !== "") // Exclude the placeholder
-                    .sort((a, b) => {
-                        if (a.value === selectedHotel.value)
-                            return 1; // Ensure the selected hotel is not in the closest list
-                        const priceA = Math.abs(parseFloat(a.getAttribute("data-price")) -
-                            selectedHotelPrice);
-                        const priceB = Math.abs(parseFloat(b.getAttribute("data-price")) -
-                            selectedHotelPrice);
-                        return priceA - priceB;
-                    })
-                    .slice(0, 2); // Get the two closest hotels
+                    // Filter the options to find the two closest hotels in price
+                    const closestHotels = allOptions
+                        .filter(option => option.value !== "") // Exclude the placeholder
+                        .sort((a, b) => {
+                            if (a.value === selectedHotel.value)
+                                return 1; // Ensure the selected hotel is not in the closest list
+                            const priceA = Math.abs(parseFloat(a.getAttribute("data-price")) -
+                                selectedHotelPrice);
+                            const priceB = Math.abs(parseFloat(b.getAttribute("data-price")) -
+                                selectedHotelPrice);
+                            return priceA - priceB;
+                        })
+                        .slice(0, 2); // Get the two closest hotels
 
-                // Clear the previous list of closest hotels
-                closestHotelsList.innerHTML = "";
+                    // Clear the previous list of closest hotels
+                    closestHotelsList.innerHTML = "";
 
-                // Display the closest hotels with images and prices
-                closestHotels.forEach(option => {
-                    const listItem = document.createElement("li");
-                    const hotelImage = document.createElement("img");
-                    hotelImage.src = option.getAttribute("image"); // Add the image source
-                    hotelImage.alt = option.value;
-                    const hotelName = document.createTextNode(option.value);
-                    const hotelPrice = document.createTextNode("Price: R" + option.getAttribute(
-                        "data-price"));
+                    // Display the closest hotels with images and prices
+                    closestHotels.forEach(option => {
+                        const listItem = document.createElement("li");
+                        const hotelImage = document.createElement("img");
+                        hotelImage.src = option.getAttribute("image"); // Add the image source
+                        hotelImage.alt = option.value;
+                        const hotelName = document.createTextNode(option.value);
+                        const hotelPrice = document.createTextNode("Price: R" + option.getAttribute(
+                            "data-price"));
 
-                    listItem.appendChild(hotelImage);
-                    listItem.appendChild(hotelName);
-                    listItem.appendChild(document.createElement("br"));
-                    listItem.appendChild(hotelPrice);
+                        listItem.appendChild(hotelImage);
+                        listItem.appendChild(hotelName);
+                        listItem.appendChild(document.createElement("br"));
+                        listItem.appendChild(hotelPrice);
 
-                    closestHotelsList.appendChild(listItem);
+                        closestHotelsList.appendChild(listItem);
+                    });
+
+                    // Show/hide the closest hotels div based on the selection
+                    closestHotelsDiv.style.display = closestHotels.length > 0 ? "block" : "none";
                 });
-
-                // Show/hide the closest hotels div based on the selection
-                closestHotelsDiv.style.display = closestHotels.length > 0 ? "block" : "none";
             });
-        });
-        </script>
 
-        <script>
-        // JavaScript code to hide the single room option based on the selected values
-        document.getElementById('adults').addEventListener('input', function() {
-            checkRoomTypeVisibility();
-        });
+            // JavaScript code to hide the single room option based on the selected values
+            document.getElementById('adults').addEventListener('input', function () {
+                checkRoomTypeVisibility();
+                calculateTotalCost(); // Recalculate total cost after visibility changes
+            });
 
-        document.getElementById('children').addEventListener('input', function() {
-            checkRoomTypeVisibility();
-        });
+            document.getElementById('children').addEventListener('input', function () {
+                checkRoomTypeVisibility();
+                calculateTotalCost(); // Recalculate total cost after visibility changes
+            });
 
-        function checkRoomTypeVisibility() {
-            const adults = parseInt(document.getElementById('adults').value);
-            const children = parseInt(document.getElementById('children').value);
-            const singleRoomRadio = document.getElementById('single_room');
+            function checkRoomTypeVisibility() {
+                const adults = parseInt(document.getElementById('adults').value);
+                const children = parseInt(document.getElementById('children').value);
+                const singleRoomRadio = document.getElementById('single_room');
 
-            // Hide the single room option if the conditions are met
-            if (adults >= 3 || (adults == 2 && children >= 2)) {
-                singleRoomRadio.style.display = 'none';
-                singleRoomRadio.checked = false;
-                document.querySelector('label[for="single_room"]').style.display = 'none';
-            } else {
-                singleRoomRadio.style.display = 'block';
-                document.querySelector('label[for="single_room"]').style.display = 'block';
-            }
-        }
-
-        // Initial check when the page loads
-        checkRoomTypeVisibility();
-
-
-        // Define room prices
-        const singleRoomPrice = 100; // R100
-        const doubleRoomPrice = 200; // R200
-
-        // JavaScript code to calculate and update the total cost
-        document.getElementById('adults').addEventListener('input', function() {
-            calculateTotalCost();
-        });
-
-        document.getElementById('children').addEventListener('input', function() {
-            calculateTotalCost();
-        });
-
-        document.getElementById('hotels').addEventListener('change', function() {
-            calculateTotalCost();
-        });
-
-        document.querySelector('input[name="room_type"]').addEventListener('change', function() {
-            calculateTotalCost();
-        });
-
-        function calculateTotalCost() {
-            const adults = parseInt(document.getElementById('adults').value);
-            const children = parseInt(document.getElementById('children').value);
-            const selectedHotel = document.getElementById('hotels').value;
-            const roomType = document.querySelector('input[name="room_type"]:checked').value;
-            const totalCostSpan = document.getElementById('total_cost');
-
-            let roomPrice = 0;
-
-            if (roomType === 'single') {
-                roomPrice = singleRoomPrice;
-            } else {
-                roomPrice = doubleRoomPrice;
+                // Hide the single room option if the conditions are met
+                if (adults >= 3 || (adults == 2 && children >= 2)) {
+                    singleRoomRadio.style.display = 'none';
+                    singleRoomRadio.checked = false;
+                    document.querySelector('label[for="single_room"]').style.display = 'none';
+                } else {
+                    singleRoomRadio.style.display = 'block';
+                    document.querySelector('label[for="single_room"]').style.display = 'block';
+                }
             }
 
-            // Calculate total cost
-            const hotelPrice = parseInt(document.querySelector('option[value="' + selectedHotel + '"]').getAttribute(
-                'data-price'));
-            const totalCost = (hotelPrice + roomPrice) * adults;
+            // Initial check when the page loads
+            checkRoomTypeVisibility();
 
-            // Display the total cost
-            totalCostSpan.textContent = 'R' + totalCost;
-        }
+            // Define room prices
+            const singleRoomPrice = 100; // R100
+            const doubleRoomPrice = 200; // R200
 
-        // Initial check when the page loads
-        calculateTotalCost();
+            // JavaScript code to calculate and update the total cost
+            document.getElementById('adults').addEventListener('input', function () {
+                calculateTotalCost();
+            });
+
+            document.getElementById('children').addEventListener('input', function () {
+                calculateTotalCost();
+            });
+
+            document.getElementById('hotels').addEventListener('change', function () {
+                calculateTotalCost();
+            });
+
+            // Additional event listener to handle visibility changes
+            document.getElementById('single_room').addEventListener('change', function () {
+                checkRoomTypeVisibility();
+                calculateTotalCost(); // Recalculate total cost after visibility changes
+            });
+
+            document.getElementById('double_room').addEventListener('change', function () {
+                calculateTotalCost(); // Recalculate total cost after visibility changes
+            });
+
+            function calculateTotalCost() {
+                const checkinDate = new Date(document.getElementById('checkin_date').value);
+                const checkoutDate = new Date(document.getElementById('checkout_date').value);
+                const days = Math.ceil((checkoutDate - checkinDate) / (1000 * 60 * 60 * 24)); // Calculate the number of days
+
+                const selectedHotel = document.getElementById('hotels').value;
+                const roomType = document.querySelector('input[name="room_type"]:checked').value;
+                const totalCostInput = document.getElementById('total_cost_input');
+
+                // Assuming these variables are defined in your PHP script
+                const singleRoomPrice = 100;
+                const doubleRoomPrice = 200;
+
+                let roomPrice = 0;
+
+                if (roomType === 'single') {
+                    roomPrice = singleRoomPrice;
+                } else {
+                    roomPrice = doubleRoomPrice;
+                }
+
+                // Calculate total cost based on the number of days and room type
+                const hotelPrice = parseInt(document.querySelector('option[value="' + selectedHotel + '"]').getAttribute('data-price'));
+                const totalCost = (hotelPrice + roomPrice) * days;
+
+                // Update the hidden input field
+                totalCostInput.value = totalCost;
+
+                // Display the total cost
+                const totalCostSpan = document.getElementById('total_cost');
+                totalCostSpan.textContent = 'R' + totalCost;
+            }
         </script>
-</body>
+    </body>
 
-</html>
+    </html>
