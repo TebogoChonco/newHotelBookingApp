@@ -1,5 +1,5 @@
   <?php
-              $query = "SELECT * FROM hotels WHERE isFeatured = 1 ORDER BY ID ASC LIMIT 4";
+              $query = "SELECT * FROM hotels WHERE isFeatured = 1 ORDER BY ID ASC LIMIT 6";
                 $result = mysqli_query($conn, $query);
                 if (!$result) {
                die("Query failed: " . mysqli_error($conn));

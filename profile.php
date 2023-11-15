@@ -13,7 +13,7 @@ require_once 'includes/database.php';
     <link rel="stylesheet" href="Admin/hotels.css">
     <title>Profile Page</title>
 </head>
-
+ 
 <body>
     <br>
     <div class="container">

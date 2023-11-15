@@ -1,56 +1,68 @@
-<?php session_start();
+<?php
+
+    error_reporting(E_ALL);
+    ini_set('display_errors', 1);
+
+    session_start();
+    require_once '../includes/database.php';    
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="background-color: rgb(248, 246, 213);">
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Online Store Full Stack</title>
-    <link rel="stylesheet" href="hotels.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
+    <title>Hotel Booking</title>
+    <link rel="stylesheet" type="text/css" href="../style.css">
+    <link rel="stylesheet" type="text/css" href="hotels.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+    </script>
 </head>
 
 <body>
-<div class="navbar">
-        <a class="logo">
-            <h1>Tebogo Party Supplies Admin Dashboard</h1>
-        </a>
-        <br>
-        <br>
 
+<div class="landingPage"></div>
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+  </ol>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img class="d-block " src="../images/c1.png" alt="First slide">
     </div>
-    <ul class="nav-ul" id="nav-ul">
-      <?php
-
-      if (isset($_SESSION['username'])) {
-        echo '<li><a href="account.php">My Account</a></li>';
-        echo '<li><a href="logout.php">Log Out</a></li>';
-      } else {
-        echo '<li><a href="login.php">Log In</a></li>';
-        echo '<li><a href="register.php">Register</a></li>';
-      }
-      ?>
-    </ul>
+    <div class="carousel-item">
+      <img class="d-block " src="../images/c4.png" alt="Second slide">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block " src="../images/c5.png" alt="Third slide">
+    </div>
   </div>
+  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+  <div class="content">
+    <br>
+    <h2>North West</h2>
+    <h7>Hotel Booking Admin Dashboard</h7>
+    <a href="login.php" class="btn btn-warning">LOG IN!</a>
+  </div>
+</div>
+</div>
 
-    <!-- <div class="welcome">
-        <div class="py-5" id="register">
-
-            <h3>Login Form</h3>
-
-            <form action="login-process.php" method="POST">
-
-                <div class="inner_conntainer"> 
-                <input type="text" placeholder="Enter Username" name="username" autocomplete="on" required> 
-                    <input type="password" placeholder="Enter Password" name="password" required> 
-                    <br>
-                    <button class="login_button" name="login_btn" type="submit">Login</button>
-                    <a href="./register.php"><button type="button" class="back_btn">Register</button></a>
-                </div>
-            </form>
-        </div>
-    </div> -->
-</body>

@@ -44,8 +44,9 @@ echo "<p>Total Price with 15% VAT: R" . number_format($totalCostWithVAT, 2) . "<
 ?>
 
 <a href="printBooking.php">
-    <button type="submit">Print Booking Confirmation</button>
+    <button type="submit">Email Booking Confirmation Pdf</button>
 </a>
+
 <?php
 require_once 'includes/footer.php'; // Assuming you have a footer file
 ?>
