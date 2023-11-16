@@ -44,7 +44,7 @@ require_once '../includes/database.php';
                     </div>
                     <div class="icon-case">
                         <img src="./assets/images/orders-icon.png" alt="">
-                    </div>
+                    </div> 
                 </div>
                 <!-- Add more cards for specific booking-related information here -->
             </div>
