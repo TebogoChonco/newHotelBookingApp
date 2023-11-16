@@ -25,36 +25,26 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     echo "<p>Room Type: $roomType</p>";
     echo "<p>Total Cost: $totalCost</p>";
 
-// Assuming $totalCost is the original total cost calculated in your script
-$vatRate = 0.15; // 15% VAT rate
+    // Assuming $totalCost is the original total cost calculated in your script
+    $vatRate = 0.15; // 15% VAT rate
 
-// Calculate total cost with VAT
-$totalCostWithVAT = $totalCost * (1 + $vatRate);
+    // Calculate total cost with VAT
+    $totalCostWithVAT = $totalCost * (1 + $vatRate);
 
-echo "<p>Total Cost: R" . number_format($totalCost, 2) . "</p>";
-echo "<p>Total Price with 15% VAT: R" . number_format($totalCostWithVAT, 2) . "</p>";
+    echo "<p>Total Cost: R" . number_format($totalCost, 2) . "</p>";
+    echo "<p>Total Price with 15% VAT: R" . number_format($totalCostWithVAT, 2) . "</p>";
 
-
+    // Provide a link to download the receipt
+    echo '<a href="generateReceipt.php" download="bookingReceipt.txt">';
+    echo '<button type="button">';
+    echo '<h3>Download Booking Confirmation Text File</h3>';
+    echo '</button>';
+    echo '</a>';
 } else {
     // Redirect to the reservation page if the form is not submitted
-    header("Location: reserve.php");
+    header("Location: confirmBooking.php");
     exit();
 }
 
-?>
- 
-<a href="printBooking.php">
-    <button type="submit">
-        <h3>Download Booking Confirmation Pdf
-        </h3>
-    </button>
-</a>
-
-<br>
-<br>
-<br>
-<br>
-
-<?php
 require_once 'includes/footer.php'; // Assuming you have a footer file
 ?>
