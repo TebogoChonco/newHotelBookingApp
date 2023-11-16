@@ -13,10 +13,10 @@
 					{
 					$row = mysqli_fetch_array($query_run,MYSQLI_ASSOC);
 					
-					$_SESSION['username'] = $username;
+					$_SESSION['username'] = $username; 
 					$_SESSION['password'] = $password;
 					
-					header( "Location: home.php");
+					header( "Location: hotel.php");
 					}
 					else
 					{

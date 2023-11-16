@@ -15,7 +15,7 @@ require_once 'landingPage.php';
 <div class="hotels">
     <form method="post" action="hotels.php?action=add&id=<?php echo $row["ID"]; ?>">
         <div class="display">
-            <img src="./Images/<?php echo $row["image"]; ?>" class="img-responsive" width="300px" /><br />
+            <img src="./Images/<?php echo $row["image"]; ?>" class="imgResponsive" width="300px" /><br />
 
             <h4><?php echo $row["hotel_name"]; ?></h4>
 
@@ -41,6 +41,3 @@ require_once 'landingPage.php';
 </div>
 
 
-<?php
-// require_once 'includes/footer.php';
-?>

@@ -44,6 +44,7 @@
             <form action="registerProcess.php" method="POST">
 
                 <div class="inner_conntainer">
+                <p class="label">Register Employee</p>
                     <input type="text" placeholder="Enter Username" name="username" autocomplete="on" required>
                     <!-- <input type="text" placeholder="Enter Full name" name="fullname" autocomplete="on" required> -->
                     <!-- <input type="email" placeholder="Enter email" name="email" autocomplete="off" required>

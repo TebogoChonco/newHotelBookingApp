@@ -17,16 +17,16 @@ require_once 'greeting.php';
 <div class="hotels">
     <form method="post" action="hotels.php?action=add&id=<?php echo $row["ID"]; ?>">
         <div class="display">
-            <img src="./Images/<?php echo $row["image"]; ?>" class="img-responsive" width="250px" /><br />
+            <img src="./Images/<?php echo $row["image"]; ?>" class="imgResponsive" width="250px" /><br />
 
             <h4><?php echo $row["hotel_name"]; ?></h4>
 
             <h6><?php echo $row["location"]; ?></h6>
-
+ 
             <p>Summary:
                 <br>
                 </Summary><?php echo $row["summury"]; ?>
-            </p>
+            </p> 
 
             <h5>R <?php echo $row["hotel_price"]; ?></h5>
 

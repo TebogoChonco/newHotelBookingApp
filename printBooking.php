@@ -8,7 +8,7 @@ require_once 'greeting.php';
 <br>
 <br>
 <h1>
-    Thank you for your booking. An email has been sent to the provided adress.
+    Thank you for your booking. Your download is completed.
 </h1>
 <br>
 <br>

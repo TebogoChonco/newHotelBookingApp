@@ -5,7 +5,7 @@ require_once '../includes/database.php';
 
 if (isset($_POST['registerBtn'])) {
     // Retrieve and validate user input from the registration form
-    $username = filter_var($_POST['username']);
+    $username = filter_var($_POST['username'], FILTER_SANITIZE_STRING);
     $password = $_POST['password'];
 
     // Step 4: Check if the username is unique
@@ -20,7 +20,7 @@ if (isset($_POST['registerBtn'])) {
         echo "Username is already taken. Please choose a different username.";
     } else {
         // Prepare and execute the SQL query to insert user data into the 'users' table
-        $sql = "INSERT INTO users (username, password) VALUES (?, ?)";
+        $sql = "INSERT INTO users (username, password, roleId) VALUES (?, ?, 1)";
         $stmt = $conn->prepare($sql);
         $stmt->bind_param("ss", $username, $password);
 
@@ -29,7 +29,7 @@ if (isset($_POST['registerBtn'])) {
         } else {
             echo "Error: Registration failed " . $stmt->error;
         }
-    } 
+    }
 
     // Close the database connection
     $username_check_stmt->close();

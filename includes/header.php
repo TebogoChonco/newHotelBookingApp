@@ -34,7 +34,7 @@ ini_set('display_errors', 1);
         <nav>
             <ul>Hotel Booking App
                 <li><a href="index.php">Home</a></li>
-                <li><a href="home.php">Hotels</a></li>
+                <li><a href="hotel.php">Hotels</a></li>
                 <li><a href="reserve.php">Reservations</a></li>
                 <li><a href="gallery.php">Gallery</a></li>
                 <li><a href="aboutUs.php">About us</a></li>

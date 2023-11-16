@@ -35,16 +35,17 @@ ini_set('display_errors', 1);
         <br>
         <br>
     </div>
-    <div class="main-wrapper" >
+    <div class="main-wrapper">
         <div class="py-5" id="register"><br>
             <h2>Login Form</h2>
 
             <form action="loginProcess.php" method="POST">
 
                 <div class="inner_conntainer">
+                    <p class="label">Employee Log In</p>
                     <input type="text" placeholder="Enter username" name="username" autocomplete="off" required>
                     <input type="password" placeholder="Enter Password" name="password" required>
-                    
+
                     <button class="loginButton" name="loginBtn" type="submit">Login</button>
                     <a href="./register.php"><button type="button" class="back_btn">Register</button></a>
                     <a href="../login.php"><button type="button" class="loginBtn">Login as User</button></a>
