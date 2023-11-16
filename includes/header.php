@@ -16,6 +16,7 @@ ini_set('display_errors', 1);
     <title>Hotel Booking</title>
     <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
@@ -32,12 +33,13 @@ ini_set('display_errors', 1);
 <body>
     <header>
         <nav>
-            <ul>Hotel Booking App
+            <ul>
                 <li><a href="index.php">Home</a></li>
                 <li><a href="hotel.php">Hotels</a></li>
                 <li><a href="reserve.php">Reservations</a></li>
                 <li><a href="gallery.php">Gallery</a></li>
                 <li><a href="aboutUs.php">About us</a></li>
+                <li><a href="contactUs.php">Contact us</a></li>
                 <li><a href="profile.php">Profile</a></li>
             </ul>
         </nav>

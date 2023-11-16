@@ -54,4 +54,13 @@ ini_set('display_errors', 1);
         </div>
     </div>
 
+    <script>
+        <?php
+        if (isset($_SESSION['login_error'])) {
+            echo "alert('" . $_SESSION['login_error'] . "');";
+            unset($_SESSION['login_error']);
+        }
+        ?>
+    </script>
+
 </body>

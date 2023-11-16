@@ -9,7 +9,7 @@ require_once 'greeting.php';
     <div class="card-heading">
         <h2>
             ABOUT US
-</h2>
+        </h2>
     </div>
     <div class="card-container">
         <div class="card">
@@ -59,3 +59,12 @@ require_once 'greeting.php';
         </div>
     </div>
 </div>
+
+<hr>
+<br>
+<br>
+<br>
+<br>
+<?php
+require_once 'includes/footer.php';
+?>
